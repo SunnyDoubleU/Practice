@@ -321,6 +321,8 @@ yearsUntilRetirement(1948, "Mike");
 yearsUntilRetirement(1969, "Jane");
 */
 
+
+
 /********************************************
  * Function Statements and Expressions
  */
@@ -329,6 +331,7 @@ yearsUntilRetirement(1969, "Jane");
 //function whatDoYouDo(job, firstName) {}
 
  //Function Expression
+ /*
  var whatDoYouDo = function(job, firstName) {
     switch(job) {
         case "teacher":
@@ -347,3 +350,165 @@ yearsUntilRetirement(1969, "Jane");
  console.log(whatDoYouDo("retired", "Mark"));
 
 console.log("Hello")
+*/
+
+
+
+/*********************************************
+ * Arrays
+ 
+ //Initialize new array
+ var names = ["John", "Mark", "Jane"];
+ var years = new Array(1990, 1969, 1948);
+ 
+ console.log(names[2]);
+ console.log(names.length);
+
+ //Mutate Array Data
+ names[1] = "Ben";
+ names[names.length] = "Mary";
+ console.log(names);
+
+ //Different data types
+ var john = ["John", "Smith", 1990, "designer", false];
+ 
+ john.push("blue");
+ john.unshift("Mr.");
+ console.log(john);
+
+ john.pop();
+ john.pop();
+ john.shift();
+ console.log(john);
+
+ console.log(john.indexOf(23));
+
+var isDesigner = john.indexOf("designer") === -1 ? "John is NOT a designer" : "John IS a designer"
+
+console.log(isDesigner);
+*/
+/*
+var billOne = 300;
+var billTwo = 49;
+var billThree = 59;
+var tipAmount =[];
+var totalAmount =[];
+
+function tipCal(amount) {
+    if (amount < 50) {
+        var tip = amount*0.2
+        var total = amount*0.2 + amount
+    } else if (amount >= 50 && amount <= 200) {
+        var tip = amount*0.15
+        var total = amount*0.15 + amount
+    } else {
+        var tip = amount*0.1
+        var total = amount*0.1 + amount
+    }
+      tipAmount.push(tip);
+      totalAmount.push(total);
+     // return console.log(tipAmount); 
+}
+
+tipCal(billOne);
+tipCal(billTwo);
+tipCal(billThree);
+
+console.log(tipAmount);
+console.log(totalAmount);
+*/
+
+/*******************************************
+ * Objects and properties
+
+ // Object Literal
+
+ var john = {
+     firstName: "John", 
+     lastName: "Smith",
+     birthYear: 1990,
+     family: ["Jane", "Mark", "Bob", "Emily"],
+     job: "teacher",
+     isMarried: false
+ };
+
+ console.log(john.firstName);
+ console.log(john["lastName"]);
+ var x = "birthYear";
+ console.log(john[x]);
+
+ john.job = "designer";
+ john["isMarried"] = true;
+ console.log(john);
+
+ //new object syntex
+ var jane = new Object();
+ jane.firstName = "jane";
+ jane.birthYear = 1969;
+ jane["lastName"] = "Smith";
+ console.log(jane);
+
+*/
+
+/***************************************************
+ * Objects and methods
+
+var john = {
+    firstName: "John", 
+    lastName: "Smith",
+    birthYear: 1992,
+    family: ["Jane", "Mark", "Bob", "Emily"],
+    job: "teacher",
+    isMarried: false,
+    calcAge: function() {
+       this.age = 2018 - this.birthYear;
+    }
+};
+
+john.calcAge();
+console.log(john);
+*/
+/*
+var massMark, massJohn, heightMark, heightJohn;
+massMark = 70
+massJohn = 80s
+heightMark = 1.7
+heightJohn = 1.75
+
+var bmiMark = massMark / heightMark^2;
+var bmiJohn = massJohn / heightJohn^2;
+
+var higherMark = bmiMark > bmiJohn;
+
+console.log("Is Mark's BMI higher than John's? " + higherMark);
+*/
+
+var john = {
+    fullName: "John Smith",
+    mass: 70,
+    height: 1.7,
+    calcJohnBmi: function(){
+        this.bmi = this.mass / (this.height * this.height);
+    }
+}
+
+john.calcJohnBmi();
+console.log(john);
+
+var mark = {
+    fullName: "Mark Smith",
+    mass: 80,
+    height: 1.85,
+    calcMarkBmi: function(){
+        this.bmi = this.mass / (this.height * this.height);
+    }
+}
+
+mark.calcMarkBmi();
+console.log(mark);
+
+if (john.bmi > mark.bmi) {
+    console.log(john.fullName + " has a higher bmi of " + john.bmi);
+} else {
+    console.log(mark.fullName + " has a higher bmi of " + mark.bmi );
+}
