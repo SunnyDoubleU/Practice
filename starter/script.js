@@ -567,7 +567,7 @@ while(i < john.length) {
  */
 
 // continue and break statements
-
+/*
 var john = ['John', "Smith", 1990, "designer", false];
 
 for (var i = 0; i < john.length;  i ++) {
@@ -584,3 +584,88 @@ for (var i = 0; i < john.length;  i ++) {
 for (var i = john.length - 1; i >= 0 ; i --) {
     console.log(john[i]);
 }
+*/
+
+/*
+124, 48, 268, 180
+20% if bill is less than 50
+15% when the bill is between 50 and 200
+10% if the bill is moe than 200
+*/
+
+var johnTipAmount = [];
+var johnTotalAmount= [];
+
+var johnBill = {
+    amount: [124, 48, 268, 180, 42],
+    tipCalc: function() {
+        for (var i = 0; i < this.amount.length; i++){
+            var bill = this.amount[i];
+            if (bill < 50) {
+                var tip = bill*0.2
+                var total = bill*0.2 + bill
+            } else if (bill >= 50 && bill <= 200) {
+                var tip = bill*0.15
+                var total = bill*0.15 + bill
+            } else {
+                var tip = bill*0.1
+                var total = bill*0.1 + bill
+        }
+          johnTipAmount.push(tip);
+          johnTotalAmount.push(total);
+        }
+    }
+};
+
+johnBill.tipCalc();
+
+// console.log(johnTipAmount);
+// console.log(johnTotalAmount);
+
+var markTipAmount = []
+var markTotalAmount = []
+
+var markBill = {
+    amount: [77, 375, 110, 45],
+    tipCalcM: function () {
+        for (var i = 0; i < this.amount.length; i++) {
+            var bill = this.amount[i];
+            if (bill < 100) {
+                var tip = bill*0.2
+                var total = bill*0.2 + bill
+            } else if (bill >= 100 && bill <= 300) {
+                var tip = bill*0.1
+                var total = bill*0.1 + bill
+            } else {
+                var tip = bill*0.25
+                var total = bill*0.25 + bill
+            }
+            markTipAmount.push(tip);
+            markTotalAmount.push(total);
+        }
+    }
+};
+
+
+markBill.tipCalcM();
+
+// console.log(markTipAmount);
+// console.log(markTotalAmount);
+
+function tipAverage(hello) {
+    var grandTotal = 0
+    for (var i = 0; i < hello.length; i++) {
+      grandTotal += hello[i]
+    }
+    return grandTotal / hello.length;
+}
+
+console.log(tipAverage(johnTipAmount));
+console.log(tipAverage(markTipAmount));
+
+if (tipAverage(johnTipAmount) > tipAverage(markTipAmount)) {
+    console.log("John bigger tip");
+} else {
+    console.log("Mark bigger tip");
+}
+
