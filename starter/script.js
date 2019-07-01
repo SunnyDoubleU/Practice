@@ -483,9 +483,13 @@ var higherMark = bmiMark > bmiJohn;
 console.log("Is Mark's BMI higher than John's? " + higherMark);
 */
 
+/***********************************
+ * Coding Challenge 4
+ 
+
 var john = {
     fullName: "John Smith",
-    mass: 70,
+    mass: 90,
     height: 1.7,
     calcJohnBmi: function(){
         this.bmi = this.mass / (this.height * this.height);
@@ -509,6 +513,74 @@ console.log(mark);
 
 if (john.bmi > mark.bmi) {
     console.log(john.fullName + " has a higher bmi of " + john.bmi);
-} else {
+} else if (mark.bmi > john.bmi) {
     console.log(mark.fullName + " has a higher bmi of " + mark.bmi );
+} else {
+    console.log("They have the same BMI");
+}
+*/
+
+/**************************************
+ * Loops and Iteration
+ */
+
+/* BUZZFEED For Loop
+
+ for (var i = 1; i < 101; i++) {
+     if (i % 3 === 0 && i % 5 === 0) {
+         console.log("BuzzFeed");
+     } else if (i % 3 === 0) {
+         console.log("Buzz");
+     } else if (i % 5 === 0) {
+         console.log("Feed");
+     } else{
+     console.log(i);
+     }
+ }
+*/
+ /*
+// for loop
+ for (var i = 1; i <= 20; i += 2){
+     console.log(i);
+ }
+
+ // i = 0, 0 < 10 true, log i to console, i++
+ // i = 1, 1 < 10 true, log i to console. i++
+ //...
+ // i = 9, 9 < 10 true, log i to console. i++
+ // i = 10, 10 < 10 FALSE, exit the loop!
+
+//loop all the items in the following array
+
+var john = ['John', "Smith", 1990, "designer", false];
+
+for (var i = 0; i < john.length;  i ++) {
+    console.log(john[i]);
+}
+
+//While Looop
+var i = 0;
+while(i < john.length) {
+    console.log(john[i]);
+    i++
+}
+ */
+
+// continue and break statements
+
+var john = ['John', "Smith", 1990, "designer", false];
+
+for (var i = 0; i < john.length;  i ++) {
+    if (typeof john[i] !== "string") continue;
+    console.log(john[i]);
+}
+
+for (var i = 0; i < john.length;  i ++) {
+    if (typeof john[i] !== "string") break; // stop loop completely when encountering element that is not a string
+    console.log(john[i]);
+}
+
+//Looping backward
+for (var i = john.length - 1; i >= 0 ; i --) {
+    console.log(john[i]);
 }
